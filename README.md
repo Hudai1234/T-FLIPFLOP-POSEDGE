@@ -1,16 +1,16 @@
 # T-FLIPFLOP-POSEDGE
 
-**AIM:**
+*AIM:*
 
 To implement  T flipflop using verilog and validating their functionality using their functional tables
 
-**SOFTWARE REQUIRED:**
+*SOFTWARE REQUIRED:*
 
 Quartus prime
 
-**THEORY**
+*THEORY*
 
-**T Flip-Flop**
+*T Flip-Flop*
 
 T flip-flop is the simplified version of JK flip-flop. It is obtained by connecting the same input ‘T’ to both inputs of JK flip-flop. It operates with only positive clock transitions or negative clock transitions. The circuit diagram of T flip-flop is shown in the following figure.
 
@@ -26,43 +26,43 @@ Here, Qtt & Qt+1t+1 are present state & next state respectively. So, T flip-flop
  
 From the above characteristic table, we can directly write the next state equation as Q(t+1)=T′Q(t)+TQ(t)′ ⇒Q(t+1)=T⊕Q(t)
 
-**Procedure**
+*Procedure*
+1. Type the program in Quartus software.
+2. Compile and run the program.
+3. Generate the RTL schematic and save the logic diagram.
+4. Create nodes for inputs and outputs to generate the timing diagram.
+5. For different input combinations generate the timing diagram
 
-```
-1.Type the program in Quartus software.
-2.Compile and run the program.
-3.Generate the RTL schematic and save the logic diagram.
-4.Create nodes for inputs and outputs to generate the timing diagram.
-5.For different input combinations generate the timing diagram
-```
+*PROGRAM*
 
-**PROGRAM**
-```
- Developed by:T.Hudaifa Mahzumia
- RegisterNumber:212224040119
-module exptfp(T,clk,Q,Qbar);
+Developed by: T.Hudaifa Mahzumia
+RegisterNumber: 24901157
+
+
+module experiment9(T,clk,Q,Qbar);
 input T,clk;
 output reg Q;
 output reg Qbar;
 initial Q=0;
 initial Qbar=1;
-always@(posedge clk)
-begin
+always @(posedge clk)
+begin 
 Q=(T&(~Q))|((~T)&Q);
 Qbar=~Q;
 end
 endmodule
-```
- 
-**RTL LOGIC FOR FLIPFLOPS**
-![image](https://github.com/user-attachments/assets/80c30f62-9e5a-440b-b9e7-227669f72198)
 
 
-**TIMING DIGRAMS FOR FLIP FLOPS**
-![image](https://github.com/user-attachments/assets/256d8a1e-2d90-4dd7-825b-8bebff69eb49)
+*RTL LOGIC FOR FLIPFLOPS*
+
+![image](https://github.com/user-attachments/assets/fb024a80-d174-4532-901b-4ebee919e16e)
 
 
-**RESULTS**
+*TIMING DIGRAMS FOR FLIP FLOPS*
+
+![image](https://github.com/user-attachments/assets/0248e340-9887-44f1-b193-4852c65ceaa7)
+
+
+*RESULTS*
 
 Implementation-of-T-flipflop-using-verilog is verified
-
